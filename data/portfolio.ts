@@ -36,6 +36,9 @@ export type SkillGroup = {
   items: readonly string[];
 };
 
+const basePath =
+  process.env.NODE_ENV === "production" ? "/portfoliosite-final" : "";
+
 export const portfolioData = {
   nameShort: "SR",
   name: "Santhosh Reddy",
@@ -52,13 +55,13 @@ export const portfolioData = {
   },
 
   profileImages: [
-    "/ProfileA.jpg",
-    "/ProfileB.jpg",
-    "/ProfileC.jpg",
-    "/ProfileD.jpg",
-    "/ProfileE.jpg",
-    "/ProfileF.jpg",
-    "/ProfileG.jpg",
+    `${basePath}/ProfileA.jpg`,
+    `${basePath}/ProfileB.jpg`,
+    `${basePath}/ProfileC.jpg`,
+    `${basePath}/ProfileD.jpg`,
+    `${basePath}/ProfileE.jpg`,
+    `${basePath}/ProfileF.jpg`,
+    `${basePath}/ProfileG.jpg`,
   ] as const,
 
   heroSkillChips: [
@@ -461,15 +464,15 @@ export const portfolioData = {
     cards: [
       {
         title: "AI & Machine Learning Research",
-        pdfUrl: "/resumes/ai-ml-research.pdf",
+        pdfUrl: `${basePath}/resumes/ai-ml-research.pdf`,
       },
       {
         title: "Data Analytics & Engineering",
-        pdfUrl: "/resumes/data-analytics.pdf",
+        pdfUrl: `${basePath}/resumes/data-analytics.pdf`,
       },
       {
         title: "Software Development Engineer",
-        pdfUrl: "/resumes/sde.pdf",
+        pdfUrl: `${basePath}/resumes/sde.pdf`,
       },
     ] as const,
   },

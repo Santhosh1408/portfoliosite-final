@@ -4,7 +4,7 @@ import { useState } from "react";
 import { portfolioData as data } from "@/data/portfolio";
 
 export default function Contact() {
-  const endpoint = process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT;
+  const endpoint = "https://formspree.io/f/mdawkgqa";
 
   const [status, setStatus] = useState<
     "idle" | "sending" | "sent" | "error"
@@ -12,11 +12,6 @@ export default function Contact() {
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-
-    if (!endpoint) {
-      setStatus("error");
-      return;
-    }
 
     setStatus("sending");
 
@@ -114,16 +109,6 @@ export default function Contact() {
           {status === "error" && (
             <p className="mt-4 text-red-600 font-semibold text-sm">
               Something went wrong. Try again.
-            </p>
-          )}
-
-          {!endpoint && (
-            <p className="mt-4 text-amber-600 text-sm">
-              Add{" "}
-              <span className="font-bold">
-                NEXT_PUBLIC_FORMSPREE_ENDPOINT
-              </span>{" "}
-              in <span className="font-bold">.env.local</span> to enable sending.
             </p>
           )}
         </form>
