@@ -59,7 +59,6 @@ export const portfolioData = {
     `${basePath}/ProfileB.jpg`,
     `${basePath}/ProfileC.jpg`,
     `${basePath}/ProfileD.jpg`,
-    `${basePath}/ProfileE.jpg`,
     `${basePath}/ProfileF.jpg`,
     `${basePath}/ProfileG.jpg`,
   ] as const,
@@ -458,21 +457,13 @@ export const portfolioData = {
   ] as readonly Project[],
 
   resumesPage: {
-    title: "Professional Resumes",
+    title: "Resume",
     subtitle:
-      "Choose a resume version most relevant to the role. View in browser or download as PDF.",
+      "View my latest resume in the browser or download it as a PDF.",
     cards: [
       {
-        title: "AI & Machine Learning Research",
-        pdfUrl: `${basePath}/resumes/ai-ml-research.pdf`,
-      },
-      {
-        title: "Data Analytics & Engineering",
-        pdfUrl: `${basePath}/resumes/data-analytics.pdf`,
-      },
-      {
-        title: "Software Development Engineer",
-        pdfUrl: `${basePath}/resumes/sde.pdf`,
+        title: "Santhosh Reddy Resume",
+        pdfUrl: `${basePath}/resumes/Santhosh_Resume.pdf`,
       },
     ] as const,
   },

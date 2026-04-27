@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { portfolioData as data } from "@/data/portfolio";
 import type { Project } from "@/data/portfolio";
 
@@ -35,10 +35,6 @@ export default function Projects() {
       });
   }, [filter, query]);
 
-  useEffect(() => {
-    setVisibleCount(INITIAL_COUNT);
-  }, [filter, query]);
-
   const visible = filtered.slice(0, visibleCount);
   const canLoadMore = visibleCount < filtered.length;
 
@@ -67,7 +63,10 @@ export default function Projects() {
               <button
                 key={f}
                 type="button"
-                onClick={() => setFilter(f)}
+                onClick={() => {
+                  setFilter(f);
+                  setVisibleCount(INITIAL_COUNT);
+                }}
                 className={[
                   "rounded-full border px-4 py-2 text-sm font-extrabold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-slate-300",
                   active
@@ -86,7 +85,10 @@ export default function Projects() {
           <input
             type="text"
             value={query}
-            onChange={(e) => setQuery(e.target.value)}
+            onChange={(e) => {
+              setQuery(e.target.value);
+              setVisibleCount(INITIAL_COUNT);
+            }}
             placeholder="Search projects..."
             className="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-semibold outline-none shadow-sm focus:ring-2 focus:ring-slate-200"
           />

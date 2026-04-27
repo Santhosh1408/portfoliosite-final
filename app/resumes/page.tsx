@@ -34,7 +34,7 @@ export default function ResumesPage() {
           {data.resumesPage.subtitle}
         </p>
 
-        <div className="mt-12 grid gap-6 md:grid-cols-3">
+        <div className="mx-auto mt-12 grid max-w-md gap-6">
           {data.resumesPage.cards.map((c) => (
             <div
               key={c.title}
