@@ -58,7 +58,7 @@ export const portfolioData = {
     `${basePath}/ProfileA.jpg`,
     `${basePath}/ProfileB.jpg`,
     `${basePath}/ProfileC.jpg`,
-    `${basePath}/ProfileD.jpg`,
+    `${basePath}/ProfileH.jpg`,
     `${basePath}/ProfileF.jpg`,
     `${basePath}/ProfileG.jpg`,
   ] as const,
